@@ -8,6 +8,7 @@ module.exports.hello = (event, context, callback) => {
       input: event,
     }),
   };
+  console.log(event, context, callback);
 
   callback(null, response);
 
