@@ -13,5 +13,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/beniealpha/logfunc#readme"
+  "homepage": "https://bitbucket.org/beniealpha/logfunc#readme",
+  "dependencies": {
+    "elasticsearch": "^14.2.2"
+  }
 }
