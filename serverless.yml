@@ -6,6 +6,7 @@ service: logfunc
 
 provider:
   name: aws
+  memorySize: 128
   runtime: nodejs8.10
   role: arn:aws:iam::911846541130:role/benie-bus-event-role
   stage: dev
