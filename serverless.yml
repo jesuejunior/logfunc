@@ -14,7 +14,7 @@ provider:
 
 functions:
   compute:
-    handler: handler.hello
+    handler: handler.run
     events:
       - stream:
           type: kinesis
