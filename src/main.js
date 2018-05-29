@@ -1,12 +1,15 @@
 'use strict';
+const SearchService = require('./searchService');
 
-module.exports.hello = (event, context, callback) => {
-  console.log(JSON.stringify(event, null, 2));
+module.exports.run = (event, context, callback) => {
   event.Records.forEach(function(record) {
     let payload = new Buffer(record.kinesis.data, 'base64') 
-    console.log('payload: ', payload);
+    
+    SearchService.index(
+      index=payload.index,
+      type=payload.type,
+      body=payload
+    );
   });
   context.succeed();
-
-  //TO-DO: Construct func to send to elastic
 };
