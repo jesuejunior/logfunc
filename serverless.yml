@@ -1,16 +1,24 @@
-service: logfunc
+service: event-bus-func
 
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-# frameworkVersion: "=X.X.X"
-
+package:
+  include: 
+    - src/**
+  exclude:
+    - test/**
 provider:
   name: aws
   memorySize: 128
   runtime: nodejs8.10
   role: arn:aws:iam::911846541130:role/benie-bus-event-role
-  stage: dev
+  stage: ${opt:stage, 'development'}
   region: us-west-2
+  environment:
+    STAGE: ${self:provider.stage}
+    ES_USER: ${opt:esUser, ''}
+    ES_PWD: ${opt:esPwd, ''}
+    ES_PORT: ${opt:esPort, 9243}
+    ES_HOST: ${opt:esHost, ''}
+    ES_PROTOCOL: ${opt:esProtocol, 'https'}   
 
 functions:
   compute:
