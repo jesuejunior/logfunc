@@ -8,7 +8,7 @@ const config = {
   es: {
     USER: process.env.ES_USER || '',
     PWD: process.env.ES_PWD || '',
-    PORT: process.env.ES_PORT || 9200,
+    PORT: parseInt(process.env.ES_PORT) || 9200,
     HOST: process.env.ES_HOST || '127.0.0.1',
     PROTOCOL: process.env.ES_PROTOCOL || 'http'
   }

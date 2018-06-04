@@ -1,4 +1,4 @@
-service: event-bus-func
+service: bus-event
 
 package:
   include: 
@@ -16,7 +16,7 @@ provider:
     STAGE: ${self:provider.stage}
     ES_USER: ${opt:esUser, ''}
     ES_PWD: ${opt:esPwd, ''}
-    ES_PORT: ${opt:esPort, 9243}
+    ES_PORT: ${opt:esPort, '9243'}
     ES_HOST: ${opt:esHost, ''}
     ES_PROTOCOL: ${opt:esProtocol, 'https'}   
 
